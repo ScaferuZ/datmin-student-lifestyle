@@ -13,10 +13,6 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import silhouette_score, classification_report, make_scorer, confusion_matrix, roc_curve, auc
 from itertools import cycle
 
-
-
-
-
 # Load models and data
 @st.cache_resource
 def load_models():
@@ -33,7 +29,7 @@ rf_model, kmeans_model, scaler = load_models()
 # Load and prepare data
 @st.cache_data
 def load_data():
-    df = pd.read_csv('/content/drive/MyDrive/student_lifestyle_dataset.csv')
+    df = pd.read_csv('student_lifestyle_dataset.csv')
     X = df[['Study_Hours_Per_Day', 'Sleep_Hours_Per_Day',
             'Social_Hours_Per_Day', 'Physical_Activity_Hours_Per_Day',
             'Extracurricular_Hours_Per_Day', 'GPA']]
